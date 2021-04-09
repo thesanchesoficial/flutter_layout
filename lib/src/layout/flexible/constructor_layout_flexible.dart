@@ -2,7 +2,7 @@ library flutter_layout;
 
 import 'package:flutter/material.dart';
 
-class WidgetGrid extends StatelessWidget {
+class WidgetFlexible extends StatelessWidget {
   final EdgeInsets padding;
   final EdgeInsets margin;
   final Widget child;
@@ -11,7 +11,7 @@ class WidgetGrid extends StatelessWidget {
   final BoxConstraints constraints;
   final Color backgroundColor;
 
-  const WidgetGrid({
+  const WidgetFlexible({
     this.padding,
     this.margin,
     this.child,
