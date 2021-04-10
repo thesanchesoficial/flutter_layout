@@ -33,19 +33,16 @@ class WidgetGrid extends StatelessWidget {
   }
 
   Widget returnWidget(context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          padding: padding,
-          margin: margin,
-          color: backgroundColor,
-          width: width ?? MediaQuery.of(context).size.width,
-          height: height,
-          constraints: constraints,
-          child: child,
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Container(
+        padding: padding,
+        margin: margin,
+        color: backgroundColor,
+        width: width ?? MediaQuery.of(context).size.width,
+        height: height,
+        constraints: constraints,
+        child: child,
+      ),
     );
   }
 }

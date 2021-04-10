@@ -18,6 +18,7 @@ class LayoutGrid extends StatelessWidget {
       case LayoutFormat.layout1x2:
         return Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: children,
@@ -27,6 +28,7 @@ class LayoutGrid extends StatelessWidget {
       case LayoutFormat.layout1x3:
         return Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: children,
@@ -37,6 +39,7 @@ class LayoutGrid extends StatelessWidget {
         return Container(
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: children,
           ),
@@ -45,6 +48,7 @@ class LayoutGrid extends StatelessWidget {
       case LayoutFormat.layout2x1:
         return Container(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: children,
           ),
         );
@@ -52,6 +56,7 @@ class LayoutGrid extends StatelessWidget {
       case LayoutFormat.layout2x2:
         return Container(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: children,
           ),
         );
@@ -59,6 +64,7 @@ class LayoutGrid extends StatelessWidget {
       case LayoutFormat.layout3x1:
         return Container(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: children,
           ),
         );

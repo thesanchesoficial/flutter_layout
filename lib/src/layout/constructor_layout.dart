@@ -15,7 +15,7 @@ class Layout extends StatelessWidget {
   final double height;
   final BoxConstraints constraints;
   final List<WidgetGrid> grids;
-  final List<WidgetGrid> flexible;
+  final List<WidgetFlexible> flexible;
   final Widget blank;
 
   const Layout.blank({
@@ -81,7 +81,10 @@ class Layout extends StatelessWidget {
       child: isBlank
         ? Container()
         : isFlexible
-          ? Container()
+          ? LayoutFlexible(
+            layoutFormat: layoutFormat,
+            children: flexible,
+          )
           : LayoutGrid(
             layoutFormat: layoutFormat,
             children: grids,

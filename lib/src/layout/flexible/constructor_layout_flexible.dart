@@ -1,51 +1,49 @@
 library flutter_layout;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_layout/flutter_layout.dart';
 
-class WidgetFlexible extends StatelessWidget {
-  final EdgeInsets padding;
-  final EdgeInsets margin;
-  final Widget child;
-  final double width;
-  final double height;
-  final BoxConstraints constraints;
-  final Color backgroundColor;
+class LayoutFlexible extends StatelessWidget {
+  final LayoutFormat layoutFormat;
+  final List<WidgetFlexible> children;
 
-  const WidgetFlexible({
-    this.padding,
-    this.margin,
-    this.child,
-    this.width,
-    this.height,
-    this.constraints,
-    this.backgroundColor,
-  }) : super();
+  const LayoutFlexible({
+    this.layoutFormat,
+    this.children,
+  });
 
   @override
   Widget build(BuildContext context) {
-    if(width == null && height == null && constraints == null) {
-      return Expanded(
-        child: returnWidget(context),
-      );
-    } else {
-      return returnWidget(context);
+    switch (layoutFormat) {
+      case LayoutFormat.layout2x1:
+        return Container(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: children,
+          ),
+        );
+        break;
+      case LayoutFormat.layout3x1:
+        return Container(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: children,
+          ),
+        );
+        break;
+      case LayoutFormat.layout4x1:
+        return Container(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: children,
+          ),
+        );
+        break;
+      default:
+        return Container(
+          child: Text("Passe o Layoutformat correspondente."),
+        );
     }
-  }
-
-  Widget returnWidget(context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          padding: padding,
-          margin: margin,
-          color: backgroundColor,
-          width: width ?? MediaQuery.of(context).size.width,
-          height: height,
-          constraints: constraints,
-          child: child,
-        ),
-      ],
-    );
+    
   }
 }
