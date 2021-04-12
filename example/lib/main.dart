@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layout/flutter_layout.dart';
 
+import 'package:flutter_layout/src/layout/a_test/grid.dart';
+import 'package:flutter_layout/src/layout/a_test/wrap.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -72,13 +75,99 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 WidgetFlexible(
                   backgroundColor: Colors.yellow,
-                  child: Text("dfdsfdf" * 1000),
+                  child: Text("dfdsfdf" * 100),
                 ),
               ],
-            )
+            ),
+
+            // ---------------------------------------------
+            SizedBox(height: 20),
+            OwGrid(
+              // padding: EdgeInsets.only(left: 20, right: 0),
+              numbersInRowAccordingToWidgth: [500, 700, 900, 1100, 1300],
+              flexColumns: [1, 2, 1, 1],
+              widthColumns: [100, null, 50],
+              
+              rowHeight: 150,
+              horizontalQuantity: 2,
+              children: [
+                Container(
+                  // height: 10,
+                  color: Colors.blue,
+                  child: Text("1"),
+                ),
+                Container(
+                  // height: 10,
+                  // width: 500,
+                  color: Colors.red,
+                  child: Text("2"),
+                ),
+                Container(
+                  // width: 100,
+                  // height: 300,
+                  color: Colors.blue,
+                  child: Text("3"),
+                ),
+                Container(
+                  // width: 100,
+                  // height: 100,
+                  color: Colors.red,
+                  child: Text("4"),
+                ),
+                Container(
+                  // width: 100,
+                  // height: 100,
+                  color: Colors.blue,
+                  child: Text("5"),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 50),
+            OwWrap(
+              // padding: EdgeInsets.only(left: 20, right: 0),
+              numbersInRowAccordingToWidgth: [500, 700, 900, 1100, 1300],
+              // flexColumns: [1, 2, 1, 1, 1],
+              widthColumns: [100, null, 150],
+              
+              rowHeight: 150,
+              horizontalQuantity: 2,
+              children: [
+                Container(
+                  height: 10,
+                  color: Colors.blue,
+                  child: Text("1"),
+                ),
+                Container(
+                  height: 10,
+                  width: 500,
+                  color: Colors.red,
+                  child: Text("2"),
+                ),
+                Container(
+                  width: 100,
+                  height: 300,
+                  color: Colors.blue,
+                  child: Text("3"),
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.red,
+                  child: Text("4"),
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.blue,
+                  child: Text("5"),
+                ),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
+
